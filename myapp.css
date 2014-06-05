@@ -159,4 +159,10 @@ text-align: center;
 	height: 500px;
 	background-color: #ede0c8;
 	float: left;
+	text-align: center;;
+	font-size: 50px;
+}
+.threeShu{
+	position: relative;;
+	top: 100px;
 }
