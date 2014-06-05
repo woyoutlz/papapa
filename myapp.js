@@ -83,6 +83,8 @@ $(function(){
 			gameover()
 			return;
 		};
+		app.thisGuanka.getScore +=1;
+		$(".getRightNum").html(app.thisGuanka.getScore);
 		cell.find(".innercell").addClass("fanmian");
 		cell.find(".innercell").animate({
 		            "opacity":"1"
@@ -96,6 +98,17 @@ $(function(){
 	function goNextPlay(){
 		var scoreadd = app.thisGuanka.num*(app.thisGuanka.timeLeft+1);
 		addScore(scoreadd);
+		$(".finalAdd").html(scoreadd);
+		
+		$(".finalAdd").animate({
+			"top":"-500px",
+			"opacity":"0"
+		},1000,function(){
+			$(this).css({
+				"top":"0px",
+				"opacity":"1"
+			})
+		});
 		$(".gameInfo").addClass("display");
 		$(".papaInfo").html("你干的不错，继续点击进行一关吧");
 		$(".top1").html("请记住这些数字的大小和位置,记住后点击空格，剩余时间可加分");
@@ -120,11 +133,13 @@ $(function(){
 		app.canClick = true;
 	}
 	function reStartGame(){
+		 clearTimeout(app.timer);
 		app={};
 		// loadGuanka(4,1,10);
 		app.nownandu = [5,1,10];
 		app.score = 0;
 		setScore(0);
+		$(".gameInfo").removeClass("display");
 		$(".top1").html("请记住这些数字的大小和位置,记住后点击空格，剩余时间可加分");
 		loadGuankaType1();
 	}
@@ -178,6 +193,9 @@ $(function(){
 		app.nowin = "jiyiIn";
 		
 		app.thisGuanka.num = fangkuaiArray.length;
+		app.thisGuanka.getScore = 0;
+		$(".getRightNum").html(app.thisGuanka.getScore);
+		$(".finalAdd").html(0);
 	}
 	function soonDo(){
 		if (app.nowin=="jiyiIn") {
@@ -206,6 +224,7 @@ $(function(){
 	}
 	function makeTimer(number){
 		app.thisGuanka.timeLeft = number;
+		$(".timeLeft").html(number);
 		if (number>0) {
 			if (number==2) {
 				$('.innercell').animate({
