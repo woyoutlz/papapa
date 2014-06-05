@@ -98,6 +98,7 @@ $(function(){
 		addScore(scoreadd);
 		$(".gameInfo").addClass("display");
 		$(".papaInfo").html("你干的不错，继续点击进行一关吧");
+		$(".top1").html("请记住这些数字的大小和位置,记住后点击空格，剩余时间可加分");
 		$(".paButton").html("继续");
 		app.nowin="next";
 		app.canClick = false;
@@ -124,6 +125,7 @@ $(function(){
 		app.nownandu = [5,1,10];
 		app.score = 0;
 		setScore(0);
+		$(".top1").html("请记住这些数字的大小和位置,记住后点击空格，剩余时间可加分");
 		loadGuankaType1();
 	}
 	function setScore(num){
@@ -222,6 +224,7 @@ $(function(){
 	function pleasePapa(){
 		$(".gameInfo").addClass("display");
 		$(".papaInfo").html("请按照从小到大的顺序点击，越快加分越多");
+		$(".top1").html("请按照从小到大的顺序点击，越快加分越多");
 		$(".paButton").html("开始");
 		app.nowin = "papaBefore";
 	}
