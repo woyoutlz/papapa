@@ -14,6 +14,7 @@ font-size: 18px;
 .gameContainer{
 	margin-top: 40px;
 position: relative;
+float: left;
 padding: 15px;
 cursor: default;
 -webkit-touch-callout: none;
@@ -137,6 +138,25 @@ animation-fill-mode: both;
 }
 .score{
 	position: absolute;
-	right: 100px;
+	right: 0px;
 	top: 10px;
+		background-color:  #f2b179;
+	display: inline-block;
+
+border-radius: 3px;
+padding: 0 20px;
+text-decoration: none;
+color: #f9f6f2;
+height: 40px;
+line-height: 42px;
+display: block;
+text-align: center;
+
+}
+.rightInfo{
+	/*position: absolute;*/
+	width: 200px;
+	height: 500px;
+	background-color: #ede0c8;
+	float: left;
 }
